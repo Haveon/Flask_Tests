@@ -51,7 +51,7 @@ def add_entry():
         abort(401) #Access Denied
 
     g.db.execute('insert into entries (title, text) values (?, ?)',
-        [request.form['title'],request['text']])
+        [request.form['title'],request.form['text']])
     g.db.commit()
 
     flash('New entry was succesfully posted')
